@@ -1,11 +1,8 @@
-allprojects {
+buildscript {
     repositories {
         google()
         mavenCentral()
     }
-}
-
-buildscript {
     dependencies {
         classpath("com.google.gms:google-services:4.3.15")
     }
@@ -20,6 +17,13 @@ subprojects {
 }
 subprojects {
     project.evaluationDependsOn(":app")
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
 
 tasks.register<Delete>("clean") {
